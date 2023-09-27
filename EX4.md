@@ -11,7 +11,38 @@
 6. Display the employee table
 
 ### Program:
+```
+
+SQL> create table employeee(empid number,empname varchar (20), dept varchar (10) ,salary number);
+
+Table created.
+
+SQL> create or replace procedure insert_employeee_data AS
+  2  begin
+  3  insert into employeee (empid,empname,dept,salary)
+  4  values (1,'john','HR',50000);
+  5  insert into employeee (empid,empname,dept,salary)
+  6  values (2,'joe','IT',60000);
+  7  insert into employeee (empid,empname,dept,salary)
+  8  values (3,'bob','Finance',55000);
+  9  commit;
+ 10  end;
+ 11  /
+
+Procedure created.
+
+SQL> begin
+  2  insert_employeee_data;
+  3  end;
+  4  /
+
+PL/SQL procedure successfully completed.
+
+SQL> select * from employeee;
+```
 
 ### Output:
+![image](https://github.com/SandhiyaR1/Ex-No-4-Creating-Procedures-using-PL-SQL/assets/113497571/84ea4315-13d5-4ae8-b6ea-406c838ed4f5)
 
 ### Result:
+Hence the procedure is created successfully.
